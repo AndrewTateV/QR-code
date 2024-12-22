@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+}
+/* html
+└── body (整个页面的容器)
+    └── .container (QR码卡片)
+        ├── .img-box (QR码图片)
+        ├── h1 (标题)
+        └── p.main (描述文本) */
+/* 所以 min-height: 100vh 确保了整个蓝灰色背景区域至少和浏览器窗口一样高。 */
+body {
+  font-family: "Outfit", serif;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+
+
+  /* Grid (最现代简洁) */
+  /* place-items是两个属性的简写  */
+  /* 相当于:
+  align-items: center;    // 垂直居中
+  justify-items: center;  // 水平居中
+  */
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: rgb(213, 225, 239);
+}
+
+.container {
+  width: 20.5rem;
+  padding: var(--spacing-200, 1rem) var(--spacing-200, 1rem)
+    var(--spacing-500, 2.5rem) var(--spacing-200, 1rem);
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-300, 1.5rem);
+  background: var(--color-white, #fff);
+  border-radius: 1.25rem;
+  box-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.05);
+}
+
+.img-box {
+  width: 100%;
+  height: 18rem;
+  background: url(./images/image-qr-code.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.625rem;
+}
+
+h1 {
+  color: var(--color-slate-900, #1f314f);
+  text-align: center;
+  font-feature-settings: "liga" off, "clig" off;
+
+  font-size: var(--font-size-text-preset-1, 1.375rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+.main {
+  display: inline-block;
+  color: var(--color-slate-500, #68778d);
+  text-align: center;
+  font-feature-settings: "liga" off, "clig" off;
+
+
+
+  font-size: var(--font-size-text-preset-2, 0.9375rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; 
+  letter-spacing: 0.0125rem;
+}
